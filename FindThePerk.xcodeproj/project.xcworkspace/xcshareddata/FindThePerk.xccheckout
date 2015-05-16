@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C998BA8B-D0AB-49F1-BC88-07E8D1F343C8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FindThePerk</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D7AC9D6C3FEE636C8C0CF83FF1148CF3C2B29C77</key>
+		<string>https://github.com/amitshil/Find-The-Perk.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FindThePerk.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D7AC9D6C3FEE636C8C0CF83FF1148CF3C2B29C77</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/amitshil/Find-The-Perk.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D7AC9D6C3FEE636C8C0CF83FF1148CF3C2B29C77</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D7AC9D6C3FEE636C8C0CF83FF1148CF3C2B29C77</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Find-The-Perk</string>
+		</dict>
+	</array>
+</dict>
+</plist>
