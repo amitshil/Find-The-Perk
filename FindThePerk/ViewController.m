@@ -23,46 +23,62 @@
 
 @implementation ViewController
 @synthesize enterName;
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     ((AppsaholicSDK*)[AppsaholicSDK sharedManager]).rootViewController = self;
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bgImg.jpg"]];
     
-    UIButton *nextButton = [[UIButton alloc] initWithFrame:CGRectMake(123, 361, 73, 39)];
-    [nextButton setTitle:@"Next" forState:UIControlStateNormal];
+    UIButton *nextButton = [[UIButton alloc] initWithFrame:CGRectMake(100, 361, 120,50)];
+    [nextButton setTitle:@"Let's Start" forState:UIControlStateNormal];
     nextButton.backgroundColor = [UIColor blackColor];
     nextButton.titleLabel.textColor = [UIColor whiteColor];
     nextButton.layer.masksToBounds = YES;
     nextButton.layer.cornerRadius = 5.0f;
+    nextButton.layer.borderColor = [UIColor redColor].CGColor;
+    nextButton.layer.borderWidth = 2.0f;
     [nextButton addTarget:self action:@selector(goAhead:) forControlEvents:UIControlEventTouchUpInside];
     
-    enterName = [[UITextField alloc]initWithFrame:CGRectMake(64, 249, 192, 30)];
+    // Custom Textfield to Enter User Name
+    
+    enterName = [[UITextField alloc]initWithFrame:CGRectMake(50, 249, 225, 30)];
     enterName.delegate = self;
-    enterName.backgroundColor = [UIColor colorWithRed:159/255.0 green:138/255.0 blue:252/255.0 alpha:1.0];
-    enterName.textColor = [UIColor whiteColor];
+    enterName.backgroundColor = [UIColor clearColor];
+    enterName.placeholder = @"Enter Name";
+    enterName.textColor = [UIColor colorWithRed:159/255.0 green:138/255.0 blue:252/255.0 alpha:1.0];
     enterName.textAlignment = NSTextAlignmentCenter;
     
-    UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(36, 154, 248, 41)];
-    label1.backgroundColor = [UIColor colorWithRed:159/255.0 green:138/255.0 blue:252/255.0 alpha:1.0];
-    label1.text = @"Enter Your Name To Go Ahead";
-    label1.textColor = [UIColor whiteColor];
-    label1.textAlignment = NSTextAlignmentCenter;
+    // Bottom border of Text Field ****
+    CALayer *bottomBorder = [CALayer layer];
+    bottomBorder.frame = CGRectMake(0, 29, 225, 1);
+    bottomBorder.backgroundColor = [UIColor colorWithRed:190/255.0f green:54/255.0f blue:178/255.0f alpha:1.0f].CGColor;
+    [enterName.layer addSublayer:bottomBorder];
     
-    UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(102, 54, 117, 34)];
-    label2.backgroundColor = [UIColor colorWithRed:159/255.0 green:138/255.0 blue:252/255.0 alpha:1.0];
-    label2.text = @"Find The Perk";
-    label2.textColor = [UIColor whiteColor];
+    // Custom Label for Showing A Message
+    
+    UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(30, 50, 250, 150)];
+    label2.backgroundColor = [UIColor clearColor];
+    label2.text = @"Welcome to the World of Inception, Enter Your Name , Go Ahead and Earn Points by Answering the Simple Questions. Each Question will Give You A Point.";
+    [label2 setFont:[UIFont fontWithName:@"Heiti SC" size:20]];
+    label2.numberOfLines = 10;
+    label2.textColor = [UIColor colorWithRed:159/255.0 green:138/255.0 blue:252/255.0 alpha:1.0];
     label2.textAlignment = NSTextAlignmentCenter;
     
-    [self.view addSubview:label1];
+    // Add All Custom Views to Our View
+    
     [self.view addSubview:label2];
     [self.view addSubview:nextButton];
     [self.view addSubview:enterName];
     
+}
 
-    // Do any additional setup after loading the view, typically from a nib.
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBarHidden = YES;
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadQuestion) name:BEACON_NOTIFICATION object:nil];
+    
 }
 
 -(void)goAhead:(id)sender
@@ -79,21 +95,18 @@
      }*/
     
     [[BeaconManager createSingleTon] startRanging];
-    
-    
-    
+    [self loadQuestion];
     
 }
 -(void)loadQuestion
 {
-    if([[QuestionManager createSingleTon] didFoundCurrectBeaconForQuestion:QUESNUM_1])
-    {
-        [[NSNotificationCenter defaultCenter] removeObserver:self];
-      //  [[QuestionManager createSingleTon] setState:[NSNumber numberWithInt:1]];
+    //if([[QuestionManager createSingleTon] didFoundCurrectBeaconForQuestion:[NSNumber numberWithInt:QUESNUM_1 ]])
+    //{
+        //[[NSNotificationCenter defaultCenter] removeObserver:self];
         PlaceOrderViewController * moving = [[ PlaceOrderViewController alloc]initWithNibName:@"PlaceOrderViewController" bundle:nil];
         [self.navigationController pushViewController:moving animated:YES];
         
-    }
+    //}
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -101,25 +114,9 @@
     [textField resignFirstResponder];
     return YES;
 }
--(void)viewWillAppear:(BOOL)animated{
-    self.navigationController.navigationBarHidden = YES;
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loadQuestion) name:BEACON_NOTIFICATION object:nil];
-
-}
-
-
-/*- (IBAction)goClicked:(id)sender {
-    
-    [[AppsaholicSDK sharedManager] trackEvent:EVENT2 notificationType:NO withController:self withSuccess:^(BOOL success, NSString *notificationtext, NSNumber *pointEarned) {
-    
-    }];
-
-}*/
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

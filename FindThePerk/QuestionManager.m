@@ -42,39 +42,35 @@
 {
     _currentState = state;
 }
--(BOOL)didFoundCurrectBeaconForQuestion:(NSInteger)QuestionNum
+-(BOOL)didFoundCurrectBeaconForQuestion:(NSNumber*)QuestionNum
 {
     CLBeacon *beacon = [[BeaconManager createSingleTon] currentBeacon];
     
-    switch (QuestionNum) {
+    switch (QuestionNum.intValue) {
         case 1:
-            NSLog(@"minor %@",beacon.minor);
-
-            //if([beacon.minor isEqualToNumber:MINOR_1])
-           // {
-                NSLog(@"minor %@",beacon.minor);
+            if([beacon.minor isEqualToNumber:[NSNumber numberWithInt:MINOR_1]])
+            {
                 return YES;
-
-            //}
+            }
             break;
             
         case 2:
-            if([beacon.minor isEqual:[NSNumber numberWithInt:MINOR_2]])
+            if([beacon.minor isEqualToNumber:[NSNumber numberWithInt:MINOR_2]])
                 return YES;
             break;
             
         case 3:
-            if([beacon.minor isEqual:[NSNumber numberWithInt:MINOR_3]])
+            if([beacon.minor isEqualToNumber:[NSNumber numberWithInt:MINOR_3]])
                 return YES;
             break;
             
         case 4:
-            if([beacon.minor isEqual:[NSNumber numberWithInt:MINOR_4]])
+            if([beacon.minor isEqualToNumber:[NSNumber numberWithInt:MINOR_4]])
                 return YES;
             break;
             
         case 5:
-            if([beacon.minor isEqual:[NSNumber numberWithInt:MINOR_5]])
+            if([beacon.minor isEqualToNumber:[NSNumber numberWithInt:MINOR_5]])
                 return YES;
             break;
         default:

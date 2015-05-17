@@ -57,15 +57,11 @@
 		58D0F6741B07410100F2E2D5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D0F6731B07410100F2E2D5 /* UIKit.framework */; };
 		58D0F6841B074D4F00F2E2D5 /* PlaceOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D0F6761B074D4F00F2E2D5 /* PlaceOrderViewController.m */; };
 		58D0F6851B074D4F00F2E2D5 /* PlaceOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58D0F6771B074D4F00F2E2D5 /* PlaceOrderViewController.xib */; };
-		58D0F6861B074D4F00F2E2D5 /* SteptwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D0F6791B074D4F00F2E2D5 /* SteptwoViewController.m */; };
-		58D0F6871B074D4F00F2E2D5 /* SteptwoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58D0F67A1B074D4F00F2E2D5 /* SteptwoViewController.xib */; };
-		58D0F6881B074D4F00F2E2D5 /* StepThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D0F67C1B074D4F00F2E2D5 /* StepThreeViewController.m */; };
-		58D0F6891B074D4F00F2E2D5 /* StepThreeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58D0F67D1B074D4F00F2E2D5 /* StepThreeViewController.xib */; };
-		58D0F68A1B074D4F00F2E2D5 /* StepFourViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D0F67F1B074D4F00F2E2D5 /* StepFourViewController.m */; };
-		58D0F68B1B074D4F00F2E2D5 /* StepFourViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58D0F6801B074D4F00F2E2D5 /* StepFourViewController.xib */; };
-		58D0F68C1B074D4F00F2E2D5 /* StepFiveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D0F6821B074D4F00F2E2D5 /* StepFiveViewController.m */; };
-		58D0F68D1B074D4F00F2E2D5 /* StepFiveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58D0F6831B074D4F00F2E2D5 /* StepFiveViewController.xib */; };
 		58D0F6901B075D0B00F2E2D5 /* QuestionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D0F68F1B075D0B00F2E2D5 /* QuestionManager.m */; };
+		58D0F6941B07941F00F2E2D5 /* FinalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D0F6921B07941F00F2E2D5 /* FinalViewController.m */; };
+		58D0F6951B07941F00F2E2D5 /* FinalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58D0F6931B07941F00F2E2D5 /* FinalViewController.xib */; };
+		58D0F6971B07949900F2E2D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58D0F6961B07949900F2E2D5 /* MapKit.framework */; };
+		58D0F69D1B079E1400F2E2D5 /* WovenStar.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D0F69C1B079E1400F2E2D5 /* WovenStar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,26 +131,20 @@
 		58D0F6691B071B7800F2E2D5 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		58D0F66B1B071B8300F2E2D5 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 		58D0F66D1B071BB400F2E2D5 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		58D0F6701B0735BF00F2E2D5 /* BeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconManager.h; sourceTree = "<group>"; };
-		58D0F6711B0735BF00F2E2D5 /* BeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconManager.m; sourceTree = "<group>"; };
+		58D0F6701B0735BF00F2E2D5 /* BeaconManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BeaconManager.h; path = FindThePerk/BeaconManager.h; sourceTree = "<group>"; };
+		58D0F6711B0735BF00F2E2D5 /* BeaconManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BeaconManager.m; path = FindThePerk/BeaconManager.m; sourceTree = "<group>"; };
 		58D0F6731B07410100F2E2D5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		58D0F6751B074D4F00F2E2D5 /* PlaceOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceOrderViewController.h; sourceTree = "<group>"; };
 		58D0F6761B074D4F00F2E2D5 /* PlaceOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceOrderViewController.m; sourceTree = "<group>"; };
 		58D0F6771B074D4F00F2E2D5 /* PlaceOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaceOrderViewController.xib; sourceTree = "<group>"; };
-		58D0F6781B074D4F00F2E2D5 /* SteptwoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SteptwoViewController.h; sourceTree = "<group>"; };
-		58D0F6791B074D4F00F2E2D5 /* SteptwoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SteptwoViewController.m; sourceTree = "<group>"; };
-		58D0F67A1B074D4F00F2E2D5 /* SteptwoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SteptwoViewController.xib; sourceTree = "<group>"; };
-		58D0F67B1B074D4F00F2E2D5 /* StepThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepThreeViewController.h; sourceTree = "<group>"; };
-		58D0F67C1B074D4F00F2E2D5 /* StepThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepThreeViewController.m; sourceTree = "<group>"; };
-		58D0F67D1B074D4F00F2E2D5 /* StepThreeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StepThreeViewController.xib; sourceTree = "<group>"; };
-		58D0F67E1B074D4F00F2E2D5 /* StepFourViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepFourViewController.h; sourceTree = "<group>"; };
-		58D0F67F1B074D4F00F2E2D5 /* StepFourViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepFourViewController.m; sourceTree = "<group>"; };
-		58D0F6801B074D4F00F2E2D5 /* StepFourViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StepFourViewController.xib; sourceTree = "<group>"; };
-		58D0F6811B074D4F00F2E2D5 /* StepFiveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StepFiveViewController.h; sourceTree = "<group>"; };
-		58D0F6821B074D4F00F2E2D5 /* StepFiveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StepFiveViewController.m; sourceTree = "<group>"; };
-		58D0F6831B074D4F00F2E2D5 /* StepFiveViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StepFiveViewController.xib; sourceTree = "<group>"; };
-		58D0F68E1B075D0B00F2E2D5 /* QuestionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionManager.h; sourceTree = "<group>"; };
-		58D0F68F1B075D0B00F2E2D5 /* QuestionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionManager.m; sourceTree = "<group>"; };
+		58D0F68E1B075D0B00F2E2D5 /* QuestionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionManager.h; path = FindThePerk/QuestionManager.h; sourceTree = "<group>"; };
+		58D0F68F1B075D0B00F2E2D5 /* QuestionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionManager.m; path = FindThePerk/QuestionManager.m; sourceTree = "<group>"; };
+		58D0F6911B07941F00F2E2D5 /* FinalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinalViewController.h; path = ../FinalViewController.h; sourceTree = "<group>"; };
+		58D0F6921B07941F00F2E2D5 /* FinalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinalViewController.m; path = ../FinalViewController.m; sourceTree = "<group>"; };
+		58D0F6931B07941F00F2E2D5 /* FinalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FinalViewController.xib; path = ../FinalViewController.xib; sourceTree = "<group>"; };
+		58D0F6961B07949900F2E2D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		58D0F69B1B079E1400F2E2D5 /* WovenStar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WovenStar.h; path = FindThePerk/WovenStar.h; sourceTree = "<group>"; };
+		58D0F69C1B079E1400F2E2D5 /* WovenStar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WovenStar.m; path = FindThePerk/WovenStar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +152,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58D0F6971B07949900F2E2D5 /* MapKit.framework in Frameworks */,
 				58D0F6741B07410100F2E2D5 /* UIKit.framework in Frameworks */,
 				58D0F66E1B071BB400F2E2D5 /* libsqlite3.dylib in Frameworks */,
 				58D0F66C1B071B8300F2E2D5 /* libxml2.2.dylib in Frameworks */,
@@ -194,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				58D0F5EC1B07142900F2E2D5 /* FindThePerk */,
+				58D0F69F1B07DA5F00F2E2D5 /* Library */,
 				58D0F66F1B071BCD00F2E2D5 /* Frameworks */,
 				58D0F6061B07142900F2E2D5 /* FindThePerkTests */,
 				58D0F5EB1B07142900F2E2D5 /* Products */,
@@ -214,32 +206,13 @@
 			children = (
 				58D0F5F11B07142900F2E2D5 /* AppDelegate.h */,
 				58D0F5F21B07142900F2E2D5 /* AppDelegate.m */,
-				58D0F5F41B07142900F2E2D5 /* ViewController.h */,
-				58D0F5F51B07142900F2E2D5 /* ViewController.m */,
-				58D0F6751B074D4F00F2E2D5 /* PlaceOrderViewController.h */,
-				58D0F6761B074D4F00F2E2D5 /* PlaceOrderViewController.m */,
-				58D0F6771B074D4F00F2E2D5 /* PlaceOrderViewController.xib */,
-				58D0F6781B074D4F00F2E2D5 /* SteptwoViewController.h */,
-				58D0F6791B074D4F00F2E2D5 /* SteptwoViewController.m */,
-				58D0F67A1B074D4F00F2E2D5 /* SteptwoViewController.xib */,
-				58D0F67B1B074D4F00F2E2D5 /* StepThreeViewController.h */,
-				58D0F67C1B074D4F00F2E2D5 /* StepThreeViewController.m */,
-				58D0F67D1B074D4F00F2E2D5 /* StepThreeViewController.xib */,
-				58D0F67E1B074D4F00F2E2D5 /* StepFourViewController.h */,
-				58D0F67F1B074D4F00F2E2D5 /* StepFourViewController.m */,
-				58D0F6801B074D4F00F2E2D5 /* StepFourViewController.xib */,
-				58D0F6811B074D4F00F2E2D5 /* StepFiveViewController.h */,
-				58D0F6821B074D4F00F2E2D5 /* StepFiveViewController.m */,
-				58D0F6831B074D4F00F2E2D5 /* StepFiveViewController.xib */,
 				58D0F6131B0717F100F2E2D5 /* Contants.h */,
+				58D0F6A01B07DAB100F2E2D5 /* Views */,
 				58D0F5F71B07142900F2E2D5 /* Main.storyboard */,
 				58D0F5FA1B07142900F2E2D5 /* Images.xcassets */,
 				58D0F5FC1B07142900F2E2D5 /* LaunchScreen.xib */,
 				58D0F5ED1B07142900F2E2D5 /* Supporting Files */,
-				58D0F6701B0735BF00F2E2D5 /* BeaconManager.h */,
-				58D0F6711B0735BF00F2E2D5 /* BeaconManager.m */,
-				58D0F68E1B075D0B00F2E2D5 /* QuestionManager.h */,
-				58D0F68F1B075D0B00F2E2D5 /* QuestionManager.m */,
+				58D0F69E1B07DA3900F2E2D5 /* Controllers */,
 			);
 			path = FindThePerk;
 			sourceTree = "<group>";
@@ -369,6 +342,7 @@
 		58D0F66F1B071BCD00F2E2D5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				58D0F6961B07949900F2E2D5 /* MapKit.framework */,
 				58D0F6731B07410100F2E2D5 /* UIKit.framework */,
 				58D0F66D1B071BB400F2E2D5 /* libsqlite3.dylib */,
 				58D0F66B1B071B8300F2E2D5 /* libxml2.2.dylib */,
@@ -382,6 +356,42 @@
 				58D0F6141B071A7600F2E2D5 /* AppsaholicUniversalSDK */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		58D0F69E1B07DA3900F2E2D5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				58D0F6701B0735BF00F2E2D5 /* BeaconManager.h */,
+				58D0F6711B0735BF00F2E2D5 /* BeaconManager.m */,
+				58D0F68E1B075D0B00F2E2D5 /* QuestionManager.h */,
+				58D0F68F1B075D0B00F2E2D5 /* QuestionManager.m */,
+			);
+			name = Controllers;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		58D0F69F1B07DA5F00F2E2D5 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				58D0F69B1B079E1400F2E2D5 /* WovenStar.h */,
+				58D0F69C1B079E1400F2E2D5 /* WovenStar.m */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		58D0F6A01B07DAB100F2E2D5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				58D0F5F41B07142900F2E2D5 /* ViewController.h */,
+				58D0F5F51B07142900F2E2D5 /* ViewController.m */,
+				58D0F6751B074D4F00F2E2D5 /* PlaceOrderViewController.h */,
+				58D0F6761B074D4F00F2E2D5 /* PlaceOrderViewController.m */,
+				58D0F6771B074D4F00F2E2D5 /* PlaceOrderViewController.xib */,
+				58D0F6911B07941F00F2E2D5 /* FinalViewController.h */,
+				58D0F6921B07941F00F2E2D5 /* FinalViewController.m */,
+				58D0F6931B07941F00F2E2D5 /* FinalViewController.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,21 +485,18 @@
 			files = (
 				58D0F6561B071A7600F2E2D5 /* vg_cta.png in Resources */,
 				58D0F64B1B071A7600F2E2D5 /* close_button.png in Resources */,
-				58D0F68B1B074D4F00F2E2D5 /* StepFourViewController.xib in Resources */,
 				58D0F6541B071A7600F2E2D5 /* __vungle.db in Resources */,
 				58D0F6571B071A7600F2E2D5 /* vg_mute_off.png in Resources */,
 				58D0F6521B071A7600F2E2D5 /* perk_star.png in Resources */,
 				58D0F6411B071A7600F2E2D5 /* FBAudienceNetwork.README.txt in Resources */,
 				58D0F6491B071A7600F2E2D5 /* account.png in Resources */,
-				58D0F6891B074D4F00F2E2D5 /* StepThreeViewController.xib in Resources */,
-				58D0F6871B074D4F00F2E2D5 /* SteptwoViewController.xib in Resources */,
 				58D0F6471B071A7600F2E2D5 /* README.txt in Resources */,
 				58D0F6511B071A7600F2E2D5 /* logo_perk.png in Resources */,
 				58D0F5F91B07142900F2E2D5 /* Main.storyboard in Resources */,
-				58D0F68D1B074D4F00F2E2D5 /* StepFiveViewController.xib in Resources */,
 				58D0F63E1B071A7600F2E2D5 /* VERSION in Resources */,
 				58D0F64C1B071A7600F2E2D5 /* exclaimation.png in Resources */,
 				58D0F64F1B071A7600F2E2D5 /* info.png in Resources */,
+				58D0F6951B07941F00F2E2D5 /* FinalViewController.xib in Resources */,
 				58D0F6501B071A7600F2E2D5 /* info_circle.png in Resources */,
 				58D0F6421B071A7600F2E2D5 /* LICENSE in Resources */,
 				58D0F6531B071A7600F2E2D5 /* TempUnavailable.png in Resources */,
@@ -522,17 +529,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				58D0F5F61B07142900F2E2D5 /* ViewController.m in Sources */,
+				58D0F69D1B079E1400F2E2D5 /* WovenStar.m in Sources */,
 				58D0F5F31B07142900F2E2D5 /* AppDelegate.m in Sources */,
-				58D0F68C1B074D4F00F2E2D5 /* StepFiveViewController.m in Sources */,
 				58D0F5F01B07142900F2E2D5 /* main.m in Sources */,
 				58D0F6841B074D4F00F2E2D5 /* PlaceOrderViewController.m in Sources */,
 				58D0F6721B0735BF00F2E2D5 /* BeaconManager.m in Sources */,
-				58D0F6881B074D4F00F2E2D5 /* StepThreeViewController.m in Sources */,
+				58D0F6941B07941F00F2E2D5 /* FinalViewController.m in Sources */,
 				58D0F6901B075D0B00F2E2D5 /* QuestionManager.m in Sources */,
 				58D0F6451B071A7600F2E2D5 /* MBProgressHUD.m in Sources */,
 				58D0F6481B071A7600F2E2D5 /* Reachability.m in Sources */,
-				58D0F68A1B074D4F00F2E2D5 /* StepFourViewController.m in Sources */,
-				58D0F6861B074D4F00F2E2D5 /* SteptwoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

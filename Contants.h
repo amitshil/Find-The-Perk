@@ -25,22 +25,16 @@
 #define FINAL_EVENT         @"fe6f1cd716a2edca1c1574657569c1d2f5b563b0"
 
 // Questions
-#define QUESTION1           @"Who is the prime-minister of India in May 25, 2014?"
-#define QUESTION2           @"10^-6 + 10^-4 ?"
-#define QUESTION3           @"What is color of human's blood?"
-#define QUESTION4           @"How many states are there in India?"
-#define QUESTION5           @"What is the coming version of Android?"
+#define QUESTION1           @"Q1: Who is the prime-minister of India in May 25, 2014?"
+#define QUESTION2           @"Q2: 10^-6 + 10^-4 ?"
+#define QUESTION3           @"Q3: What is color of human's blood?"
+#define QUESTION4           @"Q4: How many states are there in India?"
+#define QUESTION5           @"Q5: What is the coming version of Android?"
 #define QUESNUM_1           1
 #define QUESNUM_2           2
 #define QUESNUM_3           3
 #define QUESNUM_4           4
 #define QUESNUM_5           5
-
-
-
-
-
-
 
 //Answers
 #define ANS_QUES1           @"Dr Manmohan Singh"
@@ -70,17 +64,17 @@
 #define Option3_Ques4       @"29"
 #define Option4_Ques4       @"30"
 
-#define Option1_Ques5       @"X"
-#define Option2_Ques5       @"Z"
-#define Option3_Ques5       @"M"
-#define Option4_Ques5       @"N"
+#define Option1_Ques5       @"Android X"
+#define Option2_Ques5       @"Android Z"
+#define Option3_Ques5       @"Android M"
+#define Option4_Ques5       @"Android N"
 
 
-#define Image1       @"step1X"
-#define Image2       @"stepX2"
-#define Image3       @"stepX3"
-#define Image4       @"stepX4"
-#define Image5       @"stepX5"
+#define Image1              @"step1X"
+#define Image2              @"stepX2"
+#define Image3              @"stepX3"
+#define Image4              @"stepX4"
+#define Image5              @"stepX5"
 
 //Beacon Information
 #define BEACON_UUID         @"B9407F30-F5F8-466E-AFF9-25556B57FE6D"
@@ -97,7 +91,10 @@
 #define MINOR_4             1004
 #define MINOR_5             1005
 
-#define BEACON_NOTIFICATION @"Beacon_Changed"
-
+#define BEACON_NOTIFICATION         @"Beacon_Changed"
+#define PORTAL_CLOSE_NOTIFICATION   @"SDKPortalCloseNotification "
+#define NOT_SELECTED                @"Select your option"
+#define RB                          @"ROBOTO-BOLD"
+#define RR                          @"ROBOTO-REGULAR"
 
 #endif

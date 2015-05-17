@@ -19,16 +19,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     
     [[AppsaholicSDK sharedManager] startSession:API_KEY withSuccess:^(BOOL success, NSString* status) {}];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
     
     ViewController *theLoginViewController = [[ViewController alloc]init];
     _nav = [[UINavigationController alloc]initWithRootViewController:theLoginViewController];
-    
     
     [self.window setRootViewController:_nav];
     self.window.backgroundColor = [UIColor whiteColor];

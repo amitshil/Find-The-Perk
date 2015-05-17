@@ -12,7 +12,7 @@
 
 @property NSNumber* currentState;
 +(QuestionManager *) createSingleTon;
--(BOOL)didFoundCurrectBeaconForQuestion:(NSInteger)QuestionNum;
+-(BOOL)didFoundCurrectBeaconForQuestion:(NSNumber*)QuestionNum;
 -(void)setState:(NSNumber*)state;
 -(NSNumber*)getState;
 
