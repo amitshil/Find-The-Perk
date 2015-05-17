@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		589774CB1B0860C2008CFE56 /* inception_1920_1080.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 589774CA1B0860C2008CFE56 /* inception_1920_1080.jpg */; };
+		589774CD1B0860D9008CFE56 /* Perk_LOGO_Black.png in Resources */ = {isa = PBXBuildFile; fileRef = 589774CC1B0860D9008CFE56 /* Perk_LOGO_Black.png */; };
+		589774CF1B0860E5008CFE56 /* arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 589774CE1B0860E5008CFE56 /* arrow@2x.png */; };
 		58D0F5F01B07142900F2E2D5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D0F5EF1B07142900F2E2D5 /* main.m */; };
 		58D0F5F31B07142900F2E2D5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D0F5F21B07142900F2E2D5 /* AppDelegate.m */; };
 		58D0F5F61B07142900F2E2D5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58D0F5F51B07142900F2E2D5 /* ViewController.m */; };
@@ -75,6 +78,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		589774CA1B0860C2008CFE56 /* inception_1920_1080.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = inception_1920_1080.jpg; sourceTree = "<group>"; };
+		589774CC1B0860D9008CFE56 /* Perk_LOGO_Black.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Perk_LOGO_Black.png; sourceTree = "<group>"; };
+		589774CE1B0860E5008CFE56 /* arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow@2x.png"; sourceTree = "<group>"; };
 		58D0F5EA1B07142900F2E2D5 /* FindThePerk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindThePerk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58D0F5EE1B07142900F2E2D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58D0F5EF1B07142900F2E2D5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -209,6 +215,9 @@
 				58D0F6131B0717F100F2E2D5 /* Contants.h */,
 				58D0F6A01B07DAB100F2E2D5 /* Views */,
 				58D0F5F71B07142900F2E2D5 /* Main.storyboard */,
+				589774CE1B0860E5008CFE56 /* arrow@2x.png */,
+				589774CC1B0860D9008CFE56 /* Perk_LOGO_Black.png */,
+				589774CA1B0860C2008CFE56 /* inception_1920_1080.jpg */,
 				58D0F5FA1B07142900F2E2D5 /* Images.xcassets */,
 				58D0F5FC1B07142900F2E2D5 /* LaunchScreen.xib */,
 				58D0F5ED1B07142900F2E2D5 /* Supporting Files */,
@@ -491,6 +500,8 @@
 				58D0F6411B071A7600F2E2D5 /* FBAudienceNetwork.README.txt in Resources */,
 				58D0F6491B071A7600F2E2D5 /* account.png in Resources */,
 				58D0F6471B071A7600F2E2D5 /* README.txt in Resources */,
+				589774CD1B0860D9008CFE56 /* Perk_LOGO_Black.png in Resources */,
+				589774CF1B0860E5008CFE56 /* arrow@2x.png in Resources */,
 				58D0F6511B071A7600F2E2D5 /* logo_perk.png in Resources */,
 				58D0F5F91B07142900F2E2D5 /* Main.storyboard in Resources */,
 				58D0F63E1B071A7600F2E2D5 /* VERSION in Resources */,
@@ -511,6 +522,7 @@
 				58D0F5FB1B07142900F2E2D5 /* Images.xcassets in Resources */,
 				58D0F6591B071A7600F2E2D5 /* vg_timer.png in Resources */,
 				58D0F64D1B071A7600F2E2D5 /* icon_close.png in Resources */,
+				589774CB1B0860C2008CFE56 /* inception_1920_1080.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,8 +16,8 @@
 
 @interface PlaceOrderViewController ()
 {
-    UIButton* answerBUtton[4];
-    UILabel *ansreLable;
+    UIButton* answerButtons[4];
+    UILabel *selectedOptionLabel;
     NSMutableArray *questionArray;
     NSMutableArray *questionNumArray;
     NSMutableArray *imageArray;
@@ -29,10 +29,9 @@
     NSDictionary *optionDict;
     NSMutableArray *answerArray;
     NSMutableArray *eventArray;
-    
-    UIView * QUATIONVIEW;
+    UIView * questionView;
     UIImageView * tabIconImageView;
-    UIButton* OkButton;
+    UIButton* okButton;
     WovenStar * ws;
     BOOL bAnswerSubmitted;
     NSString *selectedAnswer;
@@ -102,12 +101,13 @@
     [self.view addSubview:tabIconImageView];
     
     
-    QUATIONVIEW = [[UIView alloc]initWithFrame:CGRectMake(0,120, 320, 350)];
-    QUATIONVIEW.backgroundColor = [ UIColor whiteColor];
+    questionView = [[UIView alloc]initWithFrame:CGRectMake(5,120, 310, 350)];
+    questionView.clipsToBounds = YES;
+    questionView.backgroundColor = [ UIColor whiteColor];
     
-    QUATIONVIEW.layer.borderColor = [UIColor redColor].CGColor;
-    QUATIONVIEW.layer.borderWidth = 2;
-    [self.view addSubview:QUATIONVIEW];
+    questionView.layer.borderColor = [UIColor colorWithRed:252.0/255.0 green:78.0/255.0 blue:10.0/255.0 alpha:1].CGColor;
+    questionView.layer.borderWidth = 2;
+    [self.view addSubview:questionView];
     
     
     UILabel *quation1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 15, 300, 60)];
@@ -119,70 +119,70 @@
     quation1.font = [ UIFont fontWithName:RB size:10];
     quation1.textAlignment = NSTextAlignmentLeft;
     
-    [QUATIONVIEW addSubview:quation1];
+    [questionView addSubview:quation1];
     [[QuestionManager createSingleTon] setState:[NSNumber numberWithInt:1]];
     
     int y = 75;
     for (int k = 0; k<optionArray1.count; k++)
     {
-        answerBUtton[k] = [UIButton buttonWithType:UIButtonTypeCustom];
-        answerBUtton[k] .backgroundColor = [UIColor redColor];
-        answerBUtton[k].frame = CGRectMake(10, y, 180, 30);
-        [answerBUtton[k] setTitle:[optionArray1 objectAtIndex:k] forState:UIControlStateNormal];
+        answerButtons[k] = [UIButton buttonWithType:UIButtonTypeCustom];
+        answerButtons[k] .backgroundColor = [UIColor colorWithRed:252.0/255.0 green:78.0/255.0 blue:10.0/255.0 alpha:1];
+        answerButtons[k].frame = CGRectMake(10, y, 180, 30);
+        answerButtons[k].layer.cornerRadius = 5.0;
+        answerButtons[k].clipsToBounds = YES;
+        [answerButtons[k] setTitle:[optionArray1 objectAtIndex:k] forState:UIControlStateNormal];
         //PREVIOUS.titleLabel.font = [UIFont fontWithName:RB size:20];
-        [answerBUtton[k] setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        answerBUtton[k].tag = k;
-        answerBUtton[k].selected = YES;
-        [answerBUtton[k] addTarget:self action:@selector(optionSelected:) forControlEvents:UIControlEventTouchUpInside];
-        answerBUtton[k].contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        [QUATIONVIEW addSubview:answerBUtton[k]];
+        [answerButtons[k] setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        answerButtons[k].tag = k;
+        answerButtons[k].selected = YES;
+        [answerButtons[k] addTarget:self action:@selector(optionSelected:) forControlEvents:UIControlEventTouchUpInside];
+        answerButtons[k].contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        [questionView addSubview:answerButtons[k]];
         
         y+=40;
     }
     
-    ansreLable = [[UILabel alloc] initWithFrame:CGRectMake(25, y+20, 100, 60)];
-    ansreLable.backgroundColor = [UIColor clearColor];
-    ansreLable.text = selectedAnswer;
-    ansreLable.numberOfLines = 1;
-    ansreLable.textColor = [UIColor darkGrayColor];
-    ansreLable.font = [ UIFont fontWithName:RB size:10];
-    ansreLable.textAlignment = NSTextAlignmentLeft;
-    [QUATIONVIEW addSubview:ansreLable];
+    selectedOptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, y+20, 165, 60)];
+    selectedOptionLabel.backgroundColor = [UIColor clearColor];
+    selectedOptionLabel.text = selectedAnswer;
+    selectedOptionLabel.numberOfLines = 1;
+    selectedOptionLabel.textColor = [UIColor darkGrayColor];
+    selectedOptionLabel.font = [ UIFont fontWithName:RB size:10];
+    selectedOptionLabel.textAlignment = NSTextAlignmentLeft;
+    [questionView addSubview:selectedOptionLabel];
     
     UIButton* yesButton = [UIButton buttonWithType:UIButtonTypeCustom];
     yesButton .backgroundColor = [UIColor greenColor];
-    yesButton.frame = CGRectMake(160, ansreLable.frame.origin.y+20, 40, 30);
+    yesButton.frame = CGRectMake(185, selectedOptionLabel.frame.origin.y+20, 40, 30);
     [yesButton setTitle:@"Y" forState:UIControlStateNormal];
-    //OkButton.titleLabel.font = [UIFont fontWithName:RB size:20];
     [yesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [yesButton addTarget:self action:@selector(yesButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [QUATIONVIEW addSubview:yesButton];
+    [questionView addSubview:yesButton];
     
     
-    UIButton* yesButtonN = [UIButton buttonWithType:UIButtonTypeCustom];
-    yesButtonN .backgroundColor = [UIColor redColor];
-    yesButtonN.frame = CGRectMake(160 +70, ansreLable.frame.origin.y+20, 40, 30);
-    [yesButtonN setTitle:@"N" forState:UIControlStateNormal];
-    //OkButton.titleLabel.font = [UIFont fontWithName:RB size:20];
-    [yesButtonN setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [yesButtonN addTarget:self action:@selector(noButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [QUATIONVIEW addSubview:yesButtonN];
+    UIButton* noButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    noButton .backgroundColor = [UIColor redColor];
+    noButton.frame = CGRectMake(160 +70, selectedOptionLabel.frame.origin.y+20, 40, 30);
+    [noButton setTitle:@"N" forState:UIControlStateNormal];
+    [noButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [noButton addTarget:self action:@selector(noButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [questionView addSubview:noButton];
 }
 
 -(void)nextQuation:(NSString*)question gettheOptions:(NSMutableArray* )array imageName:(NSString *)image
 {
-    [OkButton setHidden:YES];
+    [okButton setHidden:YES];
     tabIconImageView = [[ UIImageView alloc]initWithFrame:CGRectMake(0, 63, 320, 40)];
     tabIconImageView.image = [UIImage imageNamed:image];
     tabIconImageView.userInteractionEnabled = NO;
     [self.view addSubview:tabIconImageView];
     
-    QUATIONVIEW = [[UIView alloc]initWithFrame:CGRectMake(0,120, 320, 350)];
-    QUATIONVIEW.backgroundColor = [ UIColor whiteColor];
+    questionView = [[UIView alloc]initWithFrame:CGRectMake(0,120, 320, 350)];
+    questionView.backgroundColor = [ UIColor whiteColor];
     
-    QUATIONVIEW.layer.borderColor = [UIColor redColor].CGColor;
-    QUATIONVIEW.layer.borderWidth = 2;
-    [self.view addSubview:QUATIONVIEW];
+    questionView.layer.borderColor = [UIColor redColor].CGColor;
+    questionView.layer.borderWidth = 2;
+    [self.view addSubview:questionView];
     
     UILabel *quation1 = [[UILabel alloc] initWithFrame:CGRectMake(10, 15, 300, 60)];
     quation1.backgroundColor = [UIColor clearColor];
@@ -191,66 +191,74 @@
     quation1.textColor = [UIColor darkGrayColor];
     quation1.font = [ UIFont fontWithName:RB size:10];
     quation1.textAlignment = NSTextAlignmentLeft;
-    [QUATIONVIEW addSubview:quation1];
+    [questionView addSubview:quation1];
     
     int y = 75;
     for (int k = 0; k<array.count; k++)
     {
-        answerBUtton[k] = [UIButton buttonWithType:UIButtonTypeCustom];
-        answerBUtton[k] .backgroundColor = [UIColor redColor];
-        answerBUtton[k].frame = CGRectMake(10, y, 150, 30);
-        [answerBUtton[k] setTitle:[array objectAtIndex:k] forState:UIControlStateNormal];
+        answerButtons[k] = [UIButton buttonWithType:UIButtonTypeCustom];
+        answerButtons[k] .backgroundColor = [UIColor colorWithRed:252.0/255.0 green:78.0/255.0 blue:10.0/255.0 alpha:1];
+        answerButtons[k].frame = CGRectMake(10, y, 150, 30);
+        answerButtons[k].layer.cornerRadius = 5.0;
+        answerButtons[k].clipsToBounds = YES;
+        [answerButtons[k] setTitle:[array objectAtIndex:k] forState:UIControlStateNormal];
         //PREVIOUS.titleLabel.font = [UIFont fontWithName:RB size:20];
-        [answerBUtton[k] setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        answerBUtton[k].tag = k;
-        answerBUtton[k].selected = YES;
-        [answerBUtton[k] addTarget:self action:@selector(optionSelected:) forControlEvents:UIControlEventTouchUpInside];
-        answerBUtton[k].contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        [QUATIONVIEW addSubview:answerBUtton[k]];
+        [answerButtons[k] setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        answerButtons[k].tag = k;
+        answerButtons[k].selected = YES;
+        [answerButtons[k] addTarget:self action:@selector(optionSelected:) forControlEvents:UIControlEventTouchUpInside];
+        answerButtons[k].contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        [questionView addSubview:answerButtons[k]];
         
         y+=40;
     }
     
-    ansreLable = [[UILabel alloc] initWithFrame:CGRectMake(25, y+20, 100, 60)];
-    ansreLable.backgroundColor = [UIColor clearColor];
-    ansreLable.text = selectedAnswer;
+    selectedOptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, y+20, 165, 60)];
+    selectedOptionLabel.backgroundColor = [UIColor clearColor];
+    selectedOptionLabel.text = selectedAnswer;
     
-    ansreLable.numberOfLines = 1;
-    ansreLable.textColor = [UIColor darkGrayColor];
-    ansreLable.font = [ UIFont fontWithName:RB size:10];
-    ansreLable.textAlignment = NSTextAlignmentLeft;
-    [QUATIONVIEW addSubview:ansreLable];
+    selectedOptionLabel.numberOfLines = 1;
+    selectedOptionLabel.textColor = [UIColor darkGrayColor];
+    selectedOptionLabel.font = [ UIFont fontWithName:RB size:10];
+    selectedOptionLabel.textAlignment = NSTextAlignmentLeft;
+    [questionView addSubview:selectedOptionLabel];
     
     UIButton* yesButton = [UIButton buttonWithType:UIButtonTypeCustom];
     yesButton .backgroundColor = [UIColor greenColor];
-    yesButton.frame = CGRectMake(160, ansreLable.frame.origin.y+20, 40, 30);
+    yesButton.frame = CGRectMake(185, selectedOptionLabel.frame.origin.y+20, 40, 30);
     [yesButton setTitle:@"Y" forState:UIControlStateNormal];
     //OkButton.titleLabel.font = [UIFont fontWithName:RB size:20];
     [yesButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [yesButton addTarget:self action:@selector(yesButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [QUATIONVIEW addSubview:yesButton];
+    [questionView addSubview:yesButton];
     
-    UIButton* yesButtonN = [UIButton buttonWithType:UIButtonTypeCustom];
-    yesButtonN .backgroundColor = [UIColor redColor];
-    yesButtonN.frame = CGRectMake(160 +70, ansreLable.frame.origin.y+20, 40, 30);
-    [yesButtonN setTitle:@"N" forState:UIControlStateNormal];
+    UIButton* noButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    noButton .backgroundColor = [UIColor redColor];
+    noButton.frame = CGRectMake(160 +70, selectedOptionLabel.frame.origin.y+20, 40, 30);
+    [noButton setTitle:@"N" forState:UIControlStateNormal];
     //OkButton.titleLabel.font = [UIFont fontWithName:RB size:20];
-    [yesButtonN setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [yesButtonN addTarget:self action:@selector(noButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-    [QUATIONVIEW addSubview:yesButtonN];
+    [noButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [noButton addTarget:self action:@selector(noButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [questionView addSubview:noButton];
     
 }
 -(void)noButtonClicked:(UIButton *)action
 {
-    if(![ansreLable.text isEqualToString:NOT_SELECTED])
+    if(![selectedOptionLabel.text isEqualToString:NOT_SELECTED])
     {
-        for(UIViewController * view in self.navigationController.viewControllers)
-        {
-            NSLog(@"view::%@",view);
-            if([view isKindOfClass:[ViewController class]])
-            {
-                [self.navigationController popToViewController:view animated:YES];
-            }
+//        for(UIViewController * view in self.navigationController.viewControllers)
+//        {
+//            NSLog(@"view::%@",view);
+//            if([view isKindOfClass:[ViewController class]])
+//            {
+//                [self.navigationController popToViewController:view animated:YES];
+//            }
+//        }
+        selectedOptionLabel.text = NOT_SELECTED;
+        int l = 0;
+        while (l<4) {
+            answerButtons[l].backgroundColor = BUTTON_COLOR;
+            l++;
         }
     }
     else
@@ -262,16 +270,16 @@
 }
 -(void)yesButtonClicked:(UIButton *)action
 {
-    if(![ansreLable.text isEqualToString:NOT_SELECTED])
+    if(![selectedOptionLabel.text isEqualToString:NOT_SELECTED])
     {
-        OkButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        OkButton .backgroundColor = [UIColor colorWithRed:252.0/255.0 green:78.0/255.0 blue:10.0/255.0 alpha:1];
-        OkButton.frame = CGRectMake(0, 523, 320, 45);
-        [OkButton setTitle:@"CONTINUE" forState:UIControlStateNormal];
+        okButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        okButton .backgroundColor = [UIColor colorWithRed:252.0/255.0 green:78.0/255.0 blue:10.0/255.0 alpha:1];
+        okButton.frame = CGRectMake(0, 523, 320, 45);
+        [okButton setTitle:@"CONTINUE" forState:UIControlStateNormal];
         //OkButton.titleLabel.font = [UIFont fontWithName:RB size:20];
-        [OkButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [OkButton addTarget:self action:@selector(okButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:OkButton];
+        [okButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [okButton addTarget:self action:@selector(okButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:okButton];
     }
     else
     {
@@ -291,14 +299,14 @@
     {
         if (action.tag == l)
         {
-            answerBUtton[l].backgroundColor = [ UIColor greenColor];
-            selectedAnswer = answerBUtton[l].titleLabel.text;
-            ansreLable.text = selectedAnswer;
+            answerButtons[l].backgroundColor = [ UIColor grayColor];
+            selectedAnswer = answerButtons[l].titleLabel.text;
+            selectedOptionLabel.text = selectedAnswer;
 
         }
         else
         {
-           answerBUtton[l].backgroundColor = [ UIColor redColor];
+           answerButtons[l].backgroundColor = [UIColor colorWithRed:252.0/255.0 green:78.0/255.0 blue:10.0/255.0 alpha:1];
         }
         l++;
     }
@@ -307,7 +315,7 @@
 
 -(void)okButtonClicked:(id)sender
 {
-    if([OkButton.titleLabel.text isEqualToString:@"QUIT"])
+    if([okButton.titleLabel.text isEqualToString:@"QUIT"])
     {
         [self.navigationController popViewControllerAnimated:NO];
     }
@@ -316,7 +324,7 @@
         bAnswerSubmitted = YES;
         selectedAnswer = NOT_SELECTED;
         
-        if([answerArray containsObject:ansreLable.text])
+        if([answerArray containsObject:selectedOptionLabel.text])
         {
             NSNumber *index=[[QuestionManager createSingleTon] getState];
             if(index.intValue<5)
@@ -351,8 +359,8 @@
     [ws setCenter:self.view.center];
     [self.view addSubview:ws];
     [ws setPaused:NO];
-    [OkButton setTitle:@"Find Next Question" forState:UIControlStateNormal];
-    [OkButton setEnabled: NO];
+    [okButton setTitle:@"Find Next Question" forState:UIControlStateNormal];
+    [okButton setEnabled: NO];
     if(timer)
     {
         [timer invalidate];
@@ -362,8 +370,8 @@
 -(void)timerMethod
 {
     [timer invalidate];
-    [OkButton setTitle:@"QUIT" forState:UIControlStateNormal];
-    [OkButton setEnabled:YES];
+    [okButton setTitle:@"QUIT" forState:UIControlStateNormal];
+    [okButton setEnabled:YES];
 }
 -(void)loadQuestion
 {
@@ -372,6 +380,10 @@
     if(index.intValue!=5 && [[QuestionManager createSingleTon] didFoundCurrectBeaconForQuestion:[questionNumArray objectAtIndex:[index integerValue]]] && bAnswerSubmitted)
     {
         [ws setPaused:YES];
+        if(timer)
+        {
+            [timer invalidate];
+        }
         NSString *question = [questionArray objectAtIndex:[index intValue]];
         [self nextQuation:question gettheOptions:[optionDict objectForKey:question]  imageName:[imageArray objectAtIndex:[index intValue] ]];
         

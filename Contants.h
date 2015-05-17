@@ -10,6 +10,7 @@
 #define FindThePerk_Contants_h
 
 #define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+#define BUTTON_COLOR        [UIColor colorWithRed:252.0/255.0 green:78.0/255.0 blue:10.0/255.0 alpha:1]
 
 #define APP_NAME            @"Find The Perk"
 #define API_KEY             @"94d69558bfd79b6a821020f1883e14a393dcd71d"
@@ -92,7 +93,8 @@
 #define MINOR_5             1005
 
 #define BEACON_NOTIFICATION         @"Beacon_Changed"
-#define PORTAL_CLOSE_NOTIFICATION   @"SDKPortalCloseNotification "
+#define PORTAL_CLOSE_NOTIFICATION   @"SDKPortalCloseNotification"
+#define CHALLENGE_COMPLETED         @"ChallengeCompletedNotification"
 #define NOT_SELECTED                @"Select your option"
 #define RB                          @"ROBOTO-BOLD"
 #define RR                          @"ROBOTO-REGULAR"

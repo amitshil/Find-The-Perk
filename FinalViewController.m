@@ -118,7 +118,7 @@
         aView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation
                                                 reuseIdentifier:reuseId] ;
         aView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-        UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"pizza_slice_32.png"]];
+        UIImageView *iconView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Perk_LOGO_Black.png"]];
         aView.leftCalloutAccessoryView = iconView;
         aView.canShowCallout = YES;
     }
@@ -130,6 +130,7 @@
 
 -(void)receivePortalCloseNotification
 {
+    [[NSNotificationCenter defaultCenter] postNotificationName:CHALLENGE_COMPLETED object:nil];
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
